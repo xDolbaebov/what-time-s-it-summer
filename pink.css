@@ -1,0 +1,71 @@
+body {
+  background: linear-gradient(135deg, #4d0039, #660033); /* Темный розовый фон */
+  color: #ff66b2;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(50, 10, 30, 0.95); /* Затемнённый контейнер */
+  border: 3px solid #ff66b2;
+  padding: 30px 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 102, 178, 0.7);
+}
+
+h1 {
+  text-shadow: 0 0 8px #ff66b2;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.countdown-item {
+  background: rgba(100, 20, 60, 0.9); /* Темный розовый */
+  border: 2px solid #ff66b2;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 102, 178, 0.7);
+  transition: transform 0.3s;
+}
+
+.countdown-item:hover {
+  transform: scale(1.1);
+}
+
+.countdown-item span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ff66b2;
+  text-shadow: 0 0 10px #ff66b2;
+  animation: pinkGlow 1.5s infinite alternate;
+}
+
+@keyframes pinkGlow {
+  from { text-shadow: 0 0 10px #ff66b2; }
+  to { text-shadow: 0 0 20px #ff66b2; }
+}
+
+button {
+  background: #ff66b2;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 102, 178, 0.7);
+}
+
+button:hover {
+  background: #ff3385;
+}
