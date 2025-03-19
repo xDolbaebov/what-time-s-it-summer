@@ -1,0 +1,170 @@
+/* Фон с падающими цифрами */
+body {
+  background: #000;
+  font-family: 'Roboto', sans-serif;
+  color: #0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-digits {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: #000;
+  overflow: hidden;
+}
+
+.background-digits::after {
+  content: "0123456789  \n9876543210  \n1029384756  \n5647382910  \n1122334455  \n6677889900  \n";
+  white-space: pre;
+  font-family: monospace;
+  font-size: 20px;
+  color: rgba(0,255,0,0.1);
+  line-height: 1.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: rain 10s linear infinite;
+}
+@keyframes rain {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Контейнер с эффектом glassmorphism */
+.container {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #0f0;
+  padding: 30px 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,255,0,0.5);
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #0f0;
+  text-shadow: 0 0 8px #0f0;
+}
+
+/* Таймер */
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background: rgba(0,0,0,0.7);
+  border: 2px solid #0f0;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,255,0,0.5);
+  transition: transform 0.3s;
+  flex: 1 1 100px;
+}
+
+.countdown-item:hover {
+  transform: scale(1.1);
+}
+
+/* Эффект глича для цифр */
+.countdown-item span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+  position: relative;
+  overflow: hidden;
+}
+.countdown-item span::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  opacity: 0.2;
+  clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+  animation: glitch 2s infinite;
+}
+@keyframes glitch {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(0, 0); }
+  20% { clip-path: polygon(0 0, 100% 0, 100% 20%, 0 20%); transform: translate(-2px, -2px); }
+  40% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(2px, 2px); }
+  60% { clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%); transform: translate(-2px, 0); }
+  80% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(2px, -2px); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(0, 0); }
+}
+
+.countdown-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #0f0;
+}
+
+/* Кнопки */
+button {
+  background: #0f0;
+  color: #000;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,255,0,0.5);
+}
+button:hover {
+  background: #0c0;
+}
+
+/* Стили для плеера */
+.player-controls {
+  margin-bottom: 10px;
+}
+.player-controls button {
+  margin: 0 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#volumeSlider {
+  width: 100px;
+  vertical-align: middle;
+}
+
+/* Responsive адаптация */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 30px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .countdown-item {
+    padding: 15px;
+    flex: 1 1 80px;
+  }
+  .countdown-item span {
+    font-size: 2rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
