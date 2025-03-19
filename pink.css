@@ -15,10 +15,13 @@ body {
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 0 30px rgba(255, 102, 178, 0.7);
+  max-width: 600px;
+  width: 90%;
 }
 
 h1 {
   text-shadow: 0 0 8px #ff66b2;
+  font-size: 2.5rem;
 }
 
 #countdown {
@@ -26,15 +29,17 @@ h1 {
   justify-content: center;
   gap: 20px;
   margin: 20px 0;
+  flex-wrap: wrap;
 }
 
 .countdown-item {
-  background: rgba(100, 20, 60, 0.9); /* Темный розовый */
+  background: rgba(100, 20, 60, 0.9); /* Темный розовый блок */
   border: 2px solid #ff66b2;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 102, 178, 0.7);
   transition: transform 0.3s;
+  flex: 1 1 100px;
 }
 
 .countdown-item:hover {
@@ -68,4 +73,25 @@ button {
 
 button:hover {
   background: #ff3385;
+}
+
+/* Responsive адаптация */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 30px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .countdown-item {
+    padding: 15px;
+    flex: 1 1 80px;
+  }
+  .countdown-item span {
+    font-size: 2rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
