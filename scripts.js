@@ -56,6 +56,7 @@ const backgroundMusic = document.getElementById('backgroundMusic');
 const tracks = [
     { name: "Funk Da Montanha -  IMMORTAL PLAYA, SCARIONIX, chipbagov", src: "music/Funk Da Montanha -  IMMORTAL PLAYA, SCARIONIX, chipbagov.mp3" },
     { name: "steve lacy - bad habit (jalenrekt remix)", src: "music/steve lacy - bad habit (jalenrekt remix).mp3" },
+    { name: "DJ Stonik1917 - GoodDayFlopTray", src: "music/DJ Stonik1917 - GoodDayFlopTray.mp3" },
 ];
 
 let currentTrackIndex = 0;
