@@ -24,7 +24,7 @@ body {
 }
 
 .background-digits::after {
-  content: "0123456789  \n9876543210  \n1029384756  \n5647382910  \n1122334455  \n6677889900  \n";
+  content: "Бла бла бла блу блу ХА блю блю блю ";
   white-space: pre;
   font-family: monospace;
   font-size: 20px;
