@@ -24,7 +24,7 @@ body {
 }
 
 .background-digits::after {
-  content: "Бла бла бла блу блу ХА блю блю блю ";
+  content: "Бла бла бла блу блу ХА блю блю блю лингангули гули ваца лингангу лингангу";
   white-space: pre;
   font-family: monospace;
   font-size: 20px;
