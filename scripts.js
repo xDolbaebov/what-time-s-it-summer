@@ -57,6 +57,8 @@ const tracks = [
     { name: "Funk Da Montanha -  IMMORTAL PLAYA, SCARIONIX, chipbagov", src: "music/Funk Da Montanha -  IMMORTAL PLAYA, SCARIONIX, chipbagov.mp3" },
     { name: "steve lacy - bad habit (jalenrekt remix)", src: "music/steve lacy - bad habit (jalenrekt remix).mp3" },
     { name: "DJ Stonik1917 - GoodDayFlopTray", src: "music/DJ Stonik1917 - GoodDayFlopTray.mp3" },
+    { name: "Секрет - Моя любовь на пятом этажеy", src: "music/Бит_квартет_Секрет_Моя_любовь_на_пятом_этаже_1986.mp3" },
+    { name: "Дайте танк(!) - Люди", src: "music/Дайте танк(!) - Люди.mp3" },
     { name: "Дайте танк (!) - Утро", src: "music/Дайте танк (!) - Утро.mp3" },
     { name: "I GOT U - Toxi$", src: "music/I GOT U-Toxi$.mp3" },
 ];
