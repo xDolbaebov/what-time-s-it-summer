@@ -53,8 +53,14 @@ changeThemeButton.addEventListener("click", () => {
 // ----- Плеер для музыки -----
 const backgroundMusic = document.getElementById('backgroundMusic');
 
+// Опциональные элементы для отображения времени трека и перемотки (если добавите их в HTML)
+const currentTimeSpan = document.getElementById('currentTime'); // Отображает текущее время воспроизведения
+const durationSpan = document.getElementById('duration');       // Отображает длительность трека
+const seekBar = document.getElementById('seekBar');             // Ползунок перемотки
+
+// Список треков
 const tracks = [
-    { name: "Funk Da Montanha -  IMMORTAL PLAYA, SCARIONIX, chipbagov", src: "music/Funk Da Montanha -  IMMORTAL PLAYA, SCARIONIX, chipbagov.mp3" },
+    { name: "Funk Da Montanha - IMMORTAL PLAYA, SCARIONIX, chipbagov", src: "music/Funk Da Montanha -  IMMORTAL PLAYA, SCARIONIX, chipbagov.mp3" },
     { name: "steve lacy - bad habit (jalenrekt remix)", src: "music/steve lacy - bad habit (jalenrekt remix).mp3" },
     { name: "CHRYSTAL - THE DAYS (NOTION REMIX)", src: "music/CHRYSTAL - THE DAYS (NOTION REMIX).mp3" },
     { name: "DJ Stonik1917 - GoodDayFlopTray", src: "music/DJ Stonik1917 - GoodDayFlopTray.mp3" },
@@ -62,9 +68,8 @@ const tracks = [
     { name: "Секрет - Моя любовь на пятом этажеy", src: "music/Бит_квартет_Секрет_Моя_любовь_на_пятом_этаже_1986.mp3" },
     { name: "Дайте танк(!) - Люди", src: "music/Дайте танк(!) - Люди.mp3" },
     { name: "Дайте танк (!) - Утро", src: "music/Дайте танк (!) - Утро.mp3" },
-    { name: "I GOT U - Toxi$", src: "music/I GOT U-Toxi$.mp3" },
+    { name: "I GOT U - Toxi$", src: "music/I GOT U-Toxi$.mp3" }
 ];
-
 let currentTrackIndex = 0;
 
 function loadTrack(index) {
@@ -116,6 +121,31 @@ function fadeInMusic() {
     }, 100);
 }
 
+// Обновление отображения времени трека и ползунка перемотки (если элементы существуют)
+backgroundMusic.addEventListener('loadedmetadata', () => {
+    if (durationSpan) {
+      durationSpan.textContent = formatTime(backgroundMusic.duration);
+    }
+    if (seekBar) {
+      seekBar.max = backgroundMusic.duration;
+    }
+});
+backgroundMusic.addEventListener('timeupdate', () => {
+    if (currentTimeSpan) {
+      currentTimeSpan.textContent = formatTime(backgroundMusic.currentTime);
+    }
+    if (seekBar) {
+      seekBar.value = backgroundMusic.currentTime;
+    }
+});
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// Кнопка для включения музыки
 const playMusicBtn = document.getElementById('playMusicBtn');
 playMusicBtn.addEventListener('click', () => {
     fadeInMusic();
@@ -123,6 +153,7 @@ playMusicBtn.addEventListener('click', () => {
     document.getElementById('musicPlayer').style.display = 'block';
 });
 
+// Кнопка для скрытия/показа плеера
 const togglePlayerBtn = document.getElementById('togglePlayer');
 togglePlayerBtn.addEventListener('click', () => {
     const musicPlayer = document.getElementById('musicPlayer');
@@ -135,6 +166,7 @@ togglePlayerBtn.addEventListener('click', () => {
     }
 });
 
+// Управление плеером
 document.getElementById('playPauseBtn').addEventListener('click', () => {
     if (backgroundMusic.paused) {
         playTrack();
