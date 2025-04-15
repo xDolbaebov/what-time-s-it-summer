@@ -1,2 +1,11 @@
-# what-time-s-it-summer
-what time is it summer
+#Timer to summer
+
+The site will introduce a timer until summer (until June 1), you can see how many days/hours/minutes/seconds are left. 
+
+There are different and beautiful styles + player for playing music on the site
+
+#Таймер до лета
+
+Сайт введет таймер до лета (до 1 июня), можно посмотреть сколько осталось дней/часов/минут/секунд. 
+
+Есть разные и красивые стили + плеер для проигрывания музыки на сайте
