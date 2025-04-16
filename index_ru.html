@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Таймер до 1 Июня 2025 Года</title>
+  <link rel="stylesheet" id="themeStylesheet" href="styles/modern.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<div id="backToLangSelector" title="Сменить язык">
+  <img src="flags/lang.png" alt="🌐">
+</div>
+
+<style>
+  #backToLangSelector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: transform 0.2s;
+  }
+
+  #backToLangSelector:hover {
+    transform: scale(1.1);
+  }
+
+  #backToLangSelector img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<script>
+  document.getElementById('backToLangSelector').addEventListener('click', () => {
+    document.cookie = "lang=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+    window.location.href = "index.html";
+  });
+</script>
+
+<body>
+  <div class="background-digits"></div>
+  
+  <div class="container">
+    <h1>До первого Июня осталось:</h1>
+    <div id="countdown">
+      <div class="countdown-item"><span data-text="00" id="days">00</span><p>Дней</p></div>
+      <div class="countdown-item"><span data-text="00" id="hours">00</span><p>Часов</p></div>
+      <div class="countdown-item"><span data-text="00" id="minutes">00</span><p>Минут</p></div>
+      <div class="countdown-item"><span data-text="00" id="seconds">00</span><p>Секунд</p></div>
+    </div>
+    <button id="changeTheme">🎨 Изменить стиль</button>
+  </div> 
+   
+  <script src="scripts/scripts.js"></script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9313dac1d974bd20',t:'MTc0NDgwODMxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
